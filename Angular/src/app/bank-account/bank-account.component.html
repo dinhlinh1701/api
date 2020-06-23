@@ -1,0 +1,34 @@
+<div class="grid-table">
+    <div class="thead">
+        <div class="tr" style="
+        display: flex;
+    
+        padding: 1em;
+    ">
+            <div class="td">Web API</div>
+            <div class="td">Bank Account Using Angular 8</div>
+          
+
+        </div>
+    </div>
+    <div class="tbody" style="display: flex;">
+        <form class="tr" [formGroup]="fg"  *ngFor="let fg of bankAccountForms.controls" (submit="recordSubmit()")></form>
+<div class="td">
+    <input class="form-control" formcontrolName="accountNumber" >
+</div>
+<div class="td">
+    <input class="form-control" formcontrolName="accountHolder" >
+</div>
+<div class="td">
+    <select class="form-control" formcontrolName="bankID" >
+        <option *ngFor="let item of bankList" value="{{item.bankID}}" >{{item.bankName}}</option>
+    </select>
+</div>
+<div class="td">
+    <input class="form-control" formcontrolName="IFSC" >
+</div>
+<div class="td">
+    <button type="submit" class="btn btn-success">submit</button>
+</div>
+    </div>
+</div>
